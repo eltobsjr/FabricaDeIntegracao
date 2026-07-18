@@ -55,6 +55,7 @@
   @keyframes daySlideInLeft{from{opacity:0;transform:translateX(-90px)}to{opacity:1;transform:translateX(0)}}
   @keyframes dotPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
   @keyframes vsPulse{0%,100%{box-shadow:0 0 0 0 rgba(251,191,36,.35)}50%{box-shadow:0 0 0 9px rgba(251,191,36,0)}}
+  @keyframes gengarLaugh{from{background-position:0 0}to{background-position:-5206px 0}}
 
   .term-frame{position:relative;box-shadow:0 24px 48px -20px rgba(0,0,0,.75)}
   .term-frame::before,.term-frame::after{content:"";position:absolute;width:18px;height:18px;pointer-events:none;opacity:.75;transition:width .25s ease,height .25s ease,opacity .25s ease}
@@ -213,6 +214,55 @@
         </div>
       </div>
     </div>
+
+    <h2 style="text-align:center;font-family:'Press Start 2P',monospace;font-size:18px;color:#4deeea;text-shadow:3px 3px 0 #000;margin:64px 0 28px;padding:0 24px">O TEMA SECRETO</h2>
+    <div style="max-width:640px;margin:0 auto 88px;padding:0 24px;text-align:center">
+      <p style="font-size:20px;color:#c9bdf0;margin:0 0 26px">O tema da Game Jam será revelado em:</p>
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:34px">
+        <div style="background:#000;border:3px solid #ffe14d;padding:14px 8px;min-width:80px">
+          <div style="font-family:'Press Start 2P',monospace;font-size:26px;color:#ffe14d">{{ cdDays }}</div>
+          <div style="font-size:14px;color:#c9bdf0;letter-spacing:2px;margin-top:6px">DIAS</div>
+        </div>
+        <div style="background:#000;border:3px solid #ffe14d;padding:14px 8px;min-width:80px">
+          <div style="font-family:'Press Start 2P',monospace;font-size:26px;color:#ffe14d">{{ cdHours }}</div>
+          <div style="font-size:14px;color:#c9bdf0;letter-spacing:2px;margin-top:6px">HORAS</div>
+        </div>
+        <div style="background:#000;border:3px solid #ffe14d;padding:14px 8px;min-width:80px">
+          <div style="font-family:'Press Start 2P',monospace;font-size:26px;color:#ffe14d">{{ cdMins }}</div>
+          <div style="font-size:14px;color:#c9bdf0;letter-spacing:2px;margin-top:6px">MIN</div>
+        </div>
+        <div style="background:#000;border:3px solid #ffe14d;padding:14px 8px;min-width:80px">
+          <div style="font-family:'Press Start 2P',monospace;font-size:26px;color:#ffe14d">{{ cdSecs }}</div>
+          <div style="font-size:14px;color:#c9bdf0;letter-spacing:2px;margin-top:6px">SEG</div>
+        </div>
+      </div>
+      <p style="font-family:'Share Tech Mono',monospace;font-size:13px;letter-spacing:2px;color:#4deeea;margin:0 0 34px">📅 14/08/2026</p>
+
+      <div style="position:relative;background:#0d0716;border:3px dashed #ff2e88;padding:28px 22px;border-radius:4px">
+        <div style="font-size:13px;letter-spacing:3px;color:#ff2e88;margin-bottom:16px">🔒 ARQUIVO CLASSIFICADO — TEMA DA JAM</div>
+        <div id="theme-secret-text" style="filter:blur(9px);transition:filter .25s;font-family:'VT323',monospace;font-size:22px;color:#e4d9ff;line-height:1.6;user-select:none">
+          😏 Achou que ia rolar assim, de graça? O tema de verdade só sai no dia do evento — mas valeu a tentativa, espertinho(a).
+        </div>
+        <p style="font-size:12px;color:#5a4a7a;margin:16px 0 0">(nem tenta espiar pelo inspecionar elemento...)</p>
+      </div>
+    </div>
+
+    <h2 style="text-align:center;font-family:'Press Start 2P',monospace;font-size:18px;color:#4deeea;text-shadow:3px 3px 0 #000;margin:0 0 28px;padding:0 24px">QUER PARTICIPAR DA GAME JAM?</h2>
+    <div style="max-width:560px;margin:0 auto;padding:0 24px 20px;text-align:center">
+      <p style="font-size:20px;color:#c9bdf0;margin:0 0 28px">Inscreva-se como participante e garanta sua vaga na Game Jam.</p>
+      <a href="{{ formLink }}" target="_blank" rel="noopener" style="display:inline-block;padding:20px 36px;background:#ffe14d;color:#1a1033;border:3px solid #000;box-shadow:6px 6px 0 #000;font-family:'Press Start 2P',monospace;font-size:14px;text-decoration:none;transition:transform .15s" style-hover="transform:translate(-3px,-3px);box-shadow:9px 9px 0 #000">INSCREVER-SE NA GAME JAM →</a>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ gengarCaught }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:999;background:rgba(5,0,10,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;animation:fadeIn .2s ease both">
+    <div style="width:274px;height:260px;background-image:url('assets/sprite-gengar-rindo.png');background-repeat:no-repeat;background-size:5206px 260px;image-rendering:auto;animation:gengarLaugh 1.1s steps(19) infinite,pop .5s cubic-bezier(.22,1.6,.4,1) both"></div>
+    <div style="background:#000;border:3px solid #ff2e88;box-shadow:6px 6px 0 #000;padding:20px 26px;max-width:480px;margin-top:20px;text-align:center">
+      <p style="font-family:'Press Start 2P',monospace;font-size:14px;color:#ffe14d;line-height:1.8;margin:0 0 12px">TE PEGAMOS! 👻</p>
+      <p style="font-family:'VT323',monospace;font-size:20px;color:#fff;line-height:1.5;margin:0">Achou que era esperto(a) mexendo no código pra ver o tema? Nós somos mais. O tema sai só no dia do evento!</p>
+    </div>
+    <button onClick="{{ dismissGengar }}" style="margin-top:22px;padding:10px 22px;background:#ffe14d;border:3px solid #000;box-shadow:4px 4px 0 #000;font-family:'Share Tech Mono',monospace;font-size:12px;font-weight:700;cursor:pointer">FUI PEGO(A), FECHAR</button>
   </div>
   </sc-if>
 
@@ -449,10 +499,49 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},&quot;eventName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;EVENTO DE TECNOLOGIA&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ctaLink&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { day: 1, dir: 1 };
+  state = { day: 1, dir: 1, now: Date.now(), gengarCaught: false };
+
+  componentDidMount() {
+    this._tick = setInterval(() => this.setState({ now: Date.now() }), 1000);
+    this._observer = new MutationObserver(() => this.checkThemeTamper());
+    this._observer.observe(document.body, { attributes: true, attributeFilter: ['style', 'class'], subtree: true });
+    this._tamperPoll = setInterval(() => this.checkThemeTamper(), 400);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._tick);
+    clearInterval(this._tamperPoll);
+    if (this._observer) this._observer.disconnect();
+  }
+
+  checkThemeTamper() {
+    if (this.state.gengarCaught) return;
+    const el = document.getElementById('theme-secret-text');
+    if (!el) return;
+    const filter = getComputedStyle(el).filter;
+    if (!filter || !filter.includes('blur')) {
+      this.setState({ gengarCaught: true });
+    }
+  }
+
+  dismissGengar = () => {
+    const el = document.getElementById('theme-secret-text');
+    if (el) el.style.filter = 'blur(9px)';
+    this.setState({ gengarCaught: false });
+  };
+
+  // TODO: cole aqui o link do Google Forms de inscrição assim que estiver pronto.
+  FORM_LINK = '';
 
   renderVals() {
     const day = this.state.day;
+    const REVEAL_DATE = new Date('2026-08-14T00:00:00-03:00').getTime();
+    const diff = Math.max(0, REVEAL_DATE - this.state.now);
+    const pad2 = (n) => String(n).padStart(2, '0');
+    const cdDays = Math.floor(diff / 86400000);
+    const cdHours = pad2(Math.floor((diff % 86400000) / 3600000));
+    const cdMins = pad2(Math.floor((diff % 3600000) / 60000));
+    const cdSecs = pad2(Math.floor((diff % 60000) / 1000));
     const setDay = (d) => () => this.setState((s) => ({ day: d, dir: d === s.day ? s.dir : (d > s.day ? 1 : -1) }));
     const accents = { 1: '#ff2e88', 2: '#39ff14', 3: '#c9a227' };
     const navStyle = (n) => ({
@@ -481,6 +570,13 @@ class Component extends DCLogic {
         : 'animation:daySlideInLeft 1.1s cubic-bezier(.22,.7,.2,1) both',
       eventName: this.props.eventName ?? 'EVENTO DE TECNOLOGIA',
       ctaLink: this.props.ctaLink ?? '#',
+      cdDays,
+      cdHours,
+      cdMins,
+      cdSecs,
+      formLink: this.FORM_LINK || '#',
+      gengarCaught: this.state.gengarCaught,
+      dismissGengar: this.dismissGengar,
     };
   }
 }
